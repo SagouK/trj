@@ -1,14 +1,14 @@
 ﻿// Реализуйте алгоритм сортировки пузырьком числового массива, результат после каждой итерации запишите в лог-файл.
 
 
-package seminar1;
+package seminar2;
 
 import java.util.Arrays;
 import java.util.logging.*;
 import java.io.*;
 
 public class task_5 {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException{
         int[] arr = {4,1,2,7,5,3,8};
         System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(sortArr(arr)));

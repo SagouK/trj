@@ -5,7 +5,7 @@
 // то есть должно получиться что-то вроде:
 // where name = Ivanov and country = Russia and city = Moscow
 
-package seminar1;
+package seminar2;
 
 public class task_4 {
 
