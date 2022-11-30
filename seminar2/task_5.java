@@ -5,20 +5,22 @@ package seminar1;
 
 import java.util.Arrays;
 import java.util.logging.*;
+import java.io.*;
 
 public class task_5 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         int[] arr = {4,1,2,7,5,3,8};
         System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(sortArr(arr)));
     }
-    
-    public static int[] sortArr(int[] array) {
+
+
+    public static int[] sortArr(int[] array) throws IOException {
         Logger logger = Logger.getLogger(task_5.class.getName());
-        ConsoleHandler info = new ConsoleHandler();
+        FileHandler info = new FileHandler("log.xml");
         logger.addHandler(info);
-        SimpleFormatter sFormat = new SimpleFormatter();
-        info.setFormatter(sFormat);
+        XMLFormatter xml = new XMLFormatter();
+        info.setFormatter(xml);
         int temp = array[0];
         boolean isSorted = false;
         while(!isSorted){

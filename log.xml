@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="windows-1251" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-30T15:24:52.207396700Z</date>
+  <millis>1669821892207</millis>
+  <nanos>396700</nanos>
+  <sequence>0</sequence>
+  <logger>seminar1.task_5</logger>
+  <level>INFO</level>
+  <class>seminar1.task_5</class>
+  <method>sortArr</method>
+  <thread>1</thread>
+  <message>Iteration completed</message>
+</record>
+<record>
+  <date>2022-11-30T15:24:52.268260800Z</date>
+  <millis>1669821892268</millis>
+  <nanos>260800</nanos>
+  <sequence>1</sequence>
+  <logger>seminar1.task_5</logger>
+  <level>INFO</level>
+  <class>seminar1.task_5</class>
+  <method>sortArr</method>
+  <thread>1</thread>
+  <message>Iteration completed</message>
+</record>
+<record>
+  <date>2022-11-30T15:24:52.269231600Z</date>
+  <millis>1669821892269</millis>
+  <nanos>231600</nanos>
+  <sequence>2</sequence>
+  <logger>seminar1.task_5</logger>
+  <level>INFO</level>
+  <class>seminar1.task_5</class>
+  <method>sortArr</method>
+  <thread>1</thread>
+  <message>Iteration completed</message>
+</record>
+<record>
+  <date>2022-11-30T15:24:52.270228400Z</date>
+  <millis>1669821892270</millis>
+  <nanos>228400</nanos>
+  <sequence>3</sequence>
+  <logger>seminar1.task_5</logger>
+  <level>INFO</level>
+  <class>seminar1.task_5</class>
+  <method>sortArr</method>
+  <thread>1</thread>
+  <message>Iteration completed</message>
+</record>
+<record>
+  <date>2022-11-30T15:24:52.271226200Z</date>
+  <millis>1669821892271</millis>
+  <nanos>226200</nanos>
+  <sequence>4</sequence>
+  <logger>seminar1.task_5</logger>
+  <level>INFO</level>
+  <class>seminar1.task_5</class>
+  <method>sortArr</method>
+  <thread>1</thread>
+  <message>Iteration completed</message>
+</record>
+<record>
+  <date>2022-11-30T15:24:52.271226200Z</date>
+  <millis>1669821892271</millis>
+  <nanos>226200</nanos>
+  <sequence>5</sequence>
+  <logger>seminar1.task_5</logger>
+  <level>INFO</level>
+  <class>seminar1.task_5</class>
+  <method>sortArr</method>
+  <thread>1</thread>
+  <message>Iteration completed</message>
+</record>
+</log>
