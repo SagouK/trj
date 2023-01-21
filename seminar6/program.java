@@ -24,10 +24,6 @@ public class program {
         n2.filtrCriteria(userValues, nots);
         n3.filtrCriteria(userValues, nots);
 
-        
-        // n1.filtrMinValues(n1.minValues(), userNum, nots);
-        // n2.filtrMinValues(n1.minValues(), userNum, nots);
-        // n3.filtrMinValues(n1.minValues(), userNum, nots);
     }
 
     

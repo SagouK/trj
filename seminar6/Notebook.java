@@ -128,22 +128,6 @@ public class Notebook {
         
     }
 
-    // public int getcritberFromUser(){
-    //     System.out.println("Ниже представлены критерии ноутбуков. Введите цифру, соответствующую критерию:" + "\n"
-    //     + "1. Процессор" + "\n" + "2. Операционная система" + "\n" + "3. Объем ОЗУ" + "\n" + "4. Видеокарта" + "\n"
-    //     + "5. Объем SSD");
-
-
-    //     Scanner iScanner = new Scanner(System.in);
-    //     Integer critberCriteria = iScanner.nextInt();
-
-
-
-
-    //     iScanner.close();
-
-    //     return critberCriteria;
-    // }
 
     public String getModel() {
         return model;
