@@ -1,36 +1,33 @@
 package seminar6;
 
 
+import java.util.HashSet;
+import java.util.HashMap;
 
 public class program {
     public static void main(String[] args) {
-        Notebook n1 = new Notebook();
-        n1.model = "ASUS Laptop 15 F515EA-BQ774";
-        n1.CPU = "Intel Core i5-1135G7";
-        n1.OS = "Windows 10";
-        n1.RAM = 8;
-        n1.videoCard = "Intel Iris Xe Graphics";
-        n1.volumeSSD = 512;
-
-        Notebook n2 = new Notebook();
-        n2.model = "Irbis NB77";
-        n2.CPU = "Intel Atom Z3735F";
-        n2.OS = "Windows 7";
-        n2.RAM = 2;
-        n2.videoCard = "Intel HD Graphics";
-        n1.volumeSSD = 128;
-
-        Notebook n3 = new Notebook();
-        n3.model = "Lenovo ThinkPad X1 Extreme G5";
-        n3.CPU = "Intel Core i7-12700H";
-        n3.OS = "Windows 11";
-        n3.RAM = 32;
-        n3.videoCard = "GeForce RTX 3050 Ti";
-        n3.volumeSSD = 512;
-
-        Integer userNum = n1.getNumberFromUser();
-        n1.filtrCriteria(userNum);
+        Notebook n1 = new Notebook("ASUS Laptop 15 F515EA-BQ774", "Windows 10", "Intel Core i5-1135G7", 8, 512, "Intel Iris Xe Graphics");
+        Notebook n2 = new Notebook("Irbis NB77", "Windows 7", "Intel Atom Z3735F", 2, 128, "Intel HD Graphics");
+        Notebook n3 = new Notebook("Lenovo ThinkPad X1 Extreme G5", "Windows 11", "Intel Core i7-12700H", 32, 512, "GeForce RTX 3050 Ti");
         
+        HashSet <Notebook> nots = new HashSet<>();
+        nots.add(n1);
+        nots.add(n2);
+        nots.add(n3);
+        
+        
+        HashMap <Integer, Integer> userValues = n1.getcritberFromUser();
+    
+
+        
+        n1.filtrCriteria(userValues, nots);
+        n2.filtrCriteria(userValues, nots);
+        n3.filtrCriteria(userValues, nots);
+
+        
+        // n1.filtrMinValues(n1.minValues(), userNum, nots);
+        // n2.filtrMinValues(n1.minValues(), userNum, nots);
+        // n3.filtrMinValues(n1.minValues(), userNum, nots);
     }
 
     

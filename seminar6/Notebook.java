@@ -20,6 +20,7 @@
 package seminar6;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -31,62 +32,140 @@ public class Notebook {
     int volumeSSD; // GB
     String videoCard;
 
-    
-    
-    public void filtrCriteria(Integer crit) {
-        Map <Integer, String> criteriaString = new HashMap<>();
-        
-        if (crit == 1){
-            String userChoice = CPU;
-            System.out.println("Введите необходимый критерий: ");
-            Scanner iScanner = new Scanner(System.in);
-            Integer critberCriteria = iScanner.nextInt();
+    public Notebook(String model, String OS, String CPU, int RAM, int volumeSSD, String videoCard) {
+        this.model = model;
+        this.OS = OS;
+        this.CPU = CPU;
+        this.RAM = RAM;
+        this.volumeSSD = volumeSSD;
+        this.videoCard = videoCard;
+    }
 
-            for (String cpu : n1.CPU) {
-                
-            }
-
-        }
-        
-        // criteriaString.put(1, model);
-        // criteriaString.put(2, OS);
-        // criteriaString.put(3, CPU);
-        // criteriaString.put(5, videoCard);
-        // criteriaInt.put(4, RAM);
-        // criteriaInt.put(6, volumeSSD);
-
-
-        // System.out.println(criteriaInt);
-        // System.out.println(criteriaString);
-        // criteria.put(1, "Intel Core i5-1135G7\nIntel Atom Z3735F\nIntel Core i7-12700H");
-        // criteria.put(2, "Windows 11\nWindows 10 Home Singe Language\nWindows 11 Pro");
-        // criteria.put(3, "8\n2\n32");
-        // criteria.put(4, "Intel Iris Xe Graphics\nIntel HD Graphics\nGeForce RTX 3050 Ti");
-        // criteria.put(5, "512\n256\n128");
-
+    @Override
+    public String toString() {
+        return "Notebook {" +
+                "model:" + model +
+                ", OS:" + OS +
+                ", CPU:" + CPU +
+                ", RAM:" + RAM +
+                ", volumeSSD:" + volumeSSD +
+                ", videoCard:" + videoCard +
+                '}';
     }
     
 
-    public Integer getcritberFromUser(){
+    public HashMap<Integer, Integer> getcritberFromUser(){
         System.out.println("Ниже представлены критерии ноутбуков. Введите цифру, соответствующую критерию:" + "\n"
         + "1. Процессор" + "\n" + "2. Операционная система" + "\n" + "3. Объем ОЗУ" + "\n" + "4. Видеокарта" + "\n"
         + "5. Объем SSD");
 
-        // Map <Integer, Integer> criteriaInt = new HashMap<>();
 
         Scanner iScanner = new Scanner(System.in);
         Integer critberCriteria = iScanner.nextInt();
 
-        // System.out.println("Введите необходимый критерий: ");
+        System.out.println("Введите минимальное значение по указанному критерию: ");
 
-        // Scanner kScanner = new Scanner(System.in);
-        // Integer filter = kScanner.nextInt();
 
-        // criteriaInt.put(critberCriteria, filter);
+        Scanner kScanner = new Scanner(System.in);
+        Integer minValue = iScanner.nextInt();
+
 
         iScanner.close();
-        // kScanner.close();
+        kScanner.close();
 
-        return critberCriteria;
+        HashMap<Integer, Integer> criteries = new HashMap<>();
+        criteries.put(critberCriteria, minValue);
+
+        return criteries;
+    }
+
+    public void filtrCriteria(HashMap <Integer, Integer> parameters, HashSet<Notebook> dataNotes) {
+        String ssd = Integer.toString(volumeSSD);
+        String ram = Integer.toString(RAM);
+        
+        HashMap <Integer, String> criteries = new HashMap<>();
+        criteries.put(1, CPU);
+        criteries.put(2, OS);
+        criteries.put(3, ram);
+        criteries.put(4, videoCard);
+        criteries.put(5, ssd);
+
+        for (Map.Entry<Integer, Integer> entry : parameters.entrySet()) {
+            if (criteries.containsKey(entry.getKey())) {
+                if (entry.getKey().equals(3)) {
+
+                    int r = Integer.parseInt(ram);
+                    
+                    if (entry.getValue() <= (r)) {
+                        System.out.println("Ноутбуки, соответствующие условиям фильтрации" + criteries);
+                        break;
+                    }
+                    else {
+                        System.out.println("Нет ноутбуков, соответствующих вашим условиям.");
+                    }
+                }
+                else if (entry.getKey().equals(5)){
+                    int s = Integer.parseInt(ssd);
+                    if (entry.getValue() <= (s)){
+                        System.out.println("Ноутбуки, соответствующие условиям фильтрации" + criteries);
+                        break;
+                    }
+                    else {
+                        System.out.println("Нет ноутбуков, соответствующих вашим условиям.");
+                    }
+                }
+                else {
+                    System.out.println("Данный критерий нельзя отфильтровать.");
+                }
+                break;
+            }
+            
+
+            else {
+                System.out.println("Такого критерия нет, укажите цифру критериев, указанных ниже.");
+            }
+        }
+        
+    }
+
+    // public int getcritberFromUser(){
+    //     System.out.println("Ниже представлены критерии ноутбуков. Введите цифру, соответствующую критерию:" + "\n"
+    //     + "1. Процессор" + "\n" + "2. Операционная система" + "\n" + "3. Объем ОЗУ" + "\n" + "4. Видеокарта" + "\n"
+    //     + "5. Объем SSD");
+
+
+    //     Scanner iScanner = new Scanner(System.in);
+    //     Integer critberCriteria = iScanner.nextInt();
+
+
+
+
+    //     iScanner.close();
+
+    //     return critberCriteria;
+    // }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getOS() {
+        return OS;
+    }
+
+    public String getCPU() {
+        return CPU;
+    }
+
+    public int getRAM() {
+        return RAM;
+    }
+
+    public int getVolumeSSD() {
+        return volumeSSD;
+    }
+
+    public String getVideoCard() {
+        return videoCard;
     }
 }
